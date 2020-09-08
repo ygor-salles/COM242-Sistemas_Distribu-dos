@@ -1,0 +1,2 @@
+Apagar todos os arquivos com extensão .class encontrados nas duas pastas caso
+queira executar o programa do zero ou caso faça alguma alteração em algum código
