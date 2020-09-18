@@ -1,0 +1,15 @@
+1 - Os dois projetos tanto envia_soma quanto Enviar_Resultado devem estar dentro do
+diretório do mosquitto:
+C:\Program Files\mosquitto
+
+2 - Alterar o IP, deixar conforme a máquina, na classe ConfigServer.java
+
+3 - Executar o comando no terminal para iniciar o "cliente":
+mosquitto_sub -h  127.0.0.1 -t envia_soma
+
+4 - Executar o comando no terminal para iniciar o "servidor":
+mosquitto_sub -h  127.0.0.1 -t Enviar_resultado
+
+5 - Executar a main no Eclipse do Enviar_resultado
+
+6 - Executar a main no Eclipse do envia_soma
