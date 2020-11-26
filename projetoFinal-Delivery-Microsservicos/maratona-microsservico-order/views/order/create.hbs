@@ -1,0 +1,80 @@
+<script type="text/babel">
+    function Page() {
+        const [driver, setDriver] = React.useState("");
+        const [product, setProduct] = React.useState("");
+        const [location, setLocation] = React.useState("");
+        return (
+                <React.Fragment>
+                    <MUI.Typography variant="h4">Novo pedido</MUI.Typography>
+                    <form action="/orders" method="post">
+                        <MUI.TextField
+                                select
+                                name="product"
+                                label="Produto"
+                                margin="normal"
+                                variant="outlined"
+                                fullWidth
+                                value={product}
+                                required
+                                onChange={(event) => setProduct(event.target.value)}
+                        >
+                            <MUI.MenuItem value="" disabled>
+                                <em>Selecione o produto</em>
+                            </MUI.MenuItem>
+                            {{#forEach data.products}}
+                                <MUI.MenuItem value="{{id}},{{name}},{{price}}">{{name}} - R$ {{price}}</MUI.MenuItem>
+                            {{/forEach}}
+                        </MUI.TextField>
+
+                        <MUI.TextField
+                            name="amount"
+                            label="Quantidade"
+                            margin="normal"
+                            variant="outlined"
+                            fullWidth
+                            required
+                            type="number"
+                        ></MUI.TextField>
+
+                        <MUI.TextField
+                                select
+                                name="driver"
+                                label="Motorista"
+                                margin="normal"
+                                variant="outlined"
+                                fullWidth
+                                value={driver}
+                                required
+                                onChange={(event) => setDriver(event.target.value)}
+                        >
+                            <MUI.MenuItem value="" disabled>
+                                <em>Selecione o motorista</em>
+                            </MUI.MenuItem>
+                            {{#forEach data.drivers}}
+                                <MUI.MenuItem value="{{id}},{{name}}">{{name}}</MUI.MenuItem>
+                            {{/forEach}}
+                        </MUI.TextField>
+
+                        <MUI.TextField
+                                select
+                                name="location"
+                                label="Destino"
+                                margin="normal"
+                                variant="outlined"
+                                fullWidth
+                                value={location}
+                                required
+                                onChange={(event) => setLocation(event.target.value)}
+                        >
+                            <MUI.MenuItem value="" disabled>
+                                <em>Selecione a localização</em>
+                            </MUI.MenuItem>
+                            <MUI.MenuItem value="1/Unifei/-22.42523,-45.45285">Unifei</MUI.MenuItem>
+                            <MUI.MenuItem value="2/Drogasil/-22.42515,-45.45418">Drogasil</MUI.MenuItem>
+                        </MUI.TextField>
+                        <MUI.Button type="submit" variant="contained" color="primary">Enviar</MUI.Button>
+                    </form>
+                </React.Fragment>
+        )
+    }
+</script>
