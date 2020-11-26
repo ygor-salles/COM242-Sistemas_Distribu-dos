@@ -71,8 +71,10 @@ docker-compose up
 ### Qualquer duvida basta acessar o link para rodar os microsserviços:
 https://www.youtube.com/watch?v=MRk2Y_h2F-Q
 
-### Lembrando que na maratona em que o video do youtube passa nós excluímos do projeto o microsserviço de drivers e alocamos junto a Orders. 
+### Observação:
+Lembrando que na maratona em que o video do youtube passa nós excluímos do projeto o microsserviço de drivers e alocamos junto a Orders. 
 E adicionado um novo microsserviço de users, além de que a aplicação em Order foi extendida, com mais telas e cruds.
+Outro ponto é que obviamente deve estar executando todos os micro-serviços nos terminais simultaneamente para que a aplicação esteja 100% funcional
 
 ### Segue os links do projeto e documentação completo:
 https://wetransfer.com/downloads/35743526dc80011362919ce1835cb3b520201126021906/1c0d53
