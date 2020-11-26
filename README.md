@@ -5,3 +5,7 @@
 ## Procolo MQTT
 
 ## Protocolo JavaRMI
+
+## Protocolo RabbitMQ:
+No protocolo RabbitMQ foi utilizado uma aplicação de Delivery usando a arquitetura de microsserviços.
+Onde a aplicação é distribuída e utilizada diversas tecnologias 
