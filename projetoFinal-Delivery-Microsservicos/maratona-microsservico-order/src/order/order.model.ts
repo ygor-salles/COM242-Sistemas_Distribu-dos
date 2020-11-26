@@ -21,7 +21,28 @@ export class Order {
     driver_name: string;
 
     @Column()
-    location_id: number; //destino
+    location_id: number;
+
+    @Column()
+    location_name: string;
+
+    @Column()
+    user_id: string;
+
+    @Column()
+    user_name: string;
+
+    @Column()
+    product_id: string;
+
+    @Column()
+    product_name: string;
+
+    @Column()
+    amount: number;
+
+    @Column()
+    total: number;
 
     @Column("simple-array")
     location_geo: number[];

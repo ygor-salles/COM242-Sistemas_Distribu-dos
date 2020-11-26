@@ -1,11 +1,12 @@
 import {HttpModule, Module} from '@nestjs/common';
 import {OrderController} from "./order.controller";
-import {Order, } from "./order.model";
+import {Order} from "./order.model";
 import { RabbitMQModule } from '@golevelup/nestjs-rabbitmq';
 import { ChangeStatusOrderService } from './change-status-order/change-status-order.service';
 import {TypeOrmModule} from "@nestjs/typeorm";
 import { OrderSubscriberService } from './order-subscriber/order-subscriber.service';
 import { DriverHttpService } from './driver-http/driver-http.service';
+import { ProductHttpService } from './product-http/product-http.service';
 
 @Module({
     imports: [
@@ -27,6 +28,7 @@ import { DriverHttpService } from './driver-http/driver-http.service';
         ChangeStatusOrderService,
         OrderSubscriberService,
         DriverHttpService,
+        ProductHttpService,
     ]
 })
 export class OrderModule {

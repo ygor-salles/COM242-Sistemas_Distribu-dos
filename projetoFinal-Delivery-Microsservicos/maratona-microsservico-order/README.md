@@ -1,34 +1,9 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="http://maratona.fullcycle.com.br/public/img/logo-maratona.png"/></a>
-</p>
-
-## Descrição
-
 Microsserviço de pedidos construído com Nest.js Framework + React.js + RabbitMQ
 
 ## Rodar a aplicação
 
 #### Antes de começar
 
-O microsserviço de pedidos necessita que os microsserviços de Drivers e Simulador já estejam rodando antes de inicia-lo.
-Se você não os tem, clone-os aqui: 
-
-[Microsserviço Drivers](https://github.com/codeedu/maratona-microsservico-drivers)
-
-[Microsserviço Simulador](https://github.com/codeedu/maratona-microsservico-simulador)
-
-
-#### Rodar o RabbitMQ
-
-Clone o projeto de configuração Docker do RabbitMQ neste [link](https://github.com/codeedu/maratona-microsservico-rabbitmq.git). Rode ```docker-compose up```. 
-
-#### Crie o .env e configure as variáveis de ambiente
-
-```bash
-$ cp .env.example .env
-```
-
-#### Crie os containers com Docker
 
 ```bash
 $ docker-compose up
@@ -39,3 +14,8 @@ $ docker-compose up
 ```
 http://localhost:3000
 ```
+docker exec -it ecedfca7ae38 mysql -uroot -p
+
+docker container exec -it 941e03aa64cd /bin/bash
+
+Para resolução do problema iremos utilizar um sistema de delivery em que um microsserviço denominado “Order” será usado para criar a ordem de serviço da entrega. Essa ordem será publicada em uma fila no serviço de Message Broker RabbitMQ, utilizando o protocolo AMQP, que estará implementado em outro microsserviço.

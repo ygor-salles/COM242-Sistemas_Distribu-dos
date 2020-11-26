@@ -1,0 +1,70 @@
+<script type="text/babel">
+    function Page() {
+        function labelStatus(status) {
+            switch (status) {
+                case 1:
+                    return 'Pendente';
+                case 2:
+                    return 'Entregue';
+            }
+        }
+
+        return (
+                <MUI.Container>
+                    <MUI.Typography variant={"h4"}>Relatório</MUI.Typography>
+                    <form action="/orders/report/filter" method="post">
+
+                    <MUI.Box dir={'ltl'} paddingTop={5} paddingBottom={3}>
+                            <MUI.TextField
+                                id="date"
+                                name="date"
+                                label="Data"
+                                type="date"
+                                defaultValue="{{data.today}}"
+                            />
+                    </MUI.Box>
+
+                        <MUI.Button
+                                title="filtrar"
+                                color="primary"
+                                variant="contained"
+                                type="submit"
+                        >
+                            Filtrar
+                        </MUI.Button>
+                    </form>
+                    <MUI.Table>
+                        <MUI.TableHead>
+                            <MUI.TableRow>
+                                <MUI.TableCell>Produto</MUI.TableCell>
+                                <MUI.TableCell>Quantidade</MUI.TableCell>
+                                <MUI.TableCell>Total</MUI.TableCell>
+                                <MUI.TableCell>Cliente</MUI.TableCell>
+                                <MUI.TableCell>Motorista</MUI.TableCell>
+                                <MUI.TableCell>Destino</MUI.TableCell>
+                                <MUI.TableCell>Data</MUI.TableCell>
+                                <MUI.TableCell>Entregue?</MUI.TableCell>
+                            </MUI.TableRow>
+                        </MUI.TableHead>
+                        <MUI.TableBody>
+                            {{#forEach data.orders}}
+                                <MUI.TableRow>
+                                    <MUI.TableCell>{{product_name}}</MUI.TableCell>
+                                    <MUI.TableCell>{{amount}}</MUI.TableCell>
+                                    <MUI.TableCell>R$ {{totalOrder}}</MUI.TableCell>
+                                    <MUI.TableCell>{{user_name}}</MUI.TableCell>
+                                    <MUI.TableCell>{{driver_name}}</MUI.TableCell>
+                                    <MUI.TableCell>{{location_name}}</MUI.TableCell>
+                                    <MUI.TableCell>{{created_at}}</MUI.TableCell>
+                                    <MUI.TableCell>{labelStatus({{status}})}</MUI.TableCell>
+                                </MUI.TableRow>
+                            {{/forEach}}
+                        </MUI.TableBody>
+                    </MUI.Table>
+                    <MUI.Typography variant={"h4"}>Total: R$ {{data.totalOrders}}</MUI.Typography>
+                </MUI.Container>
+
+
+        );
+    }
+</script>

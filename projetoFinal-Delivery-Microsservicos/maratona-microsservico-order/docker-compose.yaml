@@ -36,5 +36,5 @@ services:
 networks:
   app-network:
     driver: bridge
-  maratona-microsservico-rabbitmq_network: 
+  maratona-microsservico-rabbitmq_network:
     external: true
